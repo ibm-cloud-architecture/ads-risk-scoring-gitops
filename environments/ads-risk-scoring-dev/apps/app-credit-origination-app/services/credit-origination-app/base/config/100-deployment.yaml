@@ -1,32 +1,55 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  annotations:
+    app.quarkus.io/commit-id: 2d74ea766c9a1a6bb71b0a5f3d5e714f7f0f9e88
+    app.quarkus.io/build-timestamp: 2021-09-03 - 18:43:37 +0000
+    prometheus.io/scrape: "true"
+    prometheus.io/path: /q/metrics
+    prometheus.io/port: "8080"
+    prometheus.io/scheme: http
   labels:
+    app.kubernetes.io/version: 1.0.0
     app.kubernetes.io/name: credit-origination-app
-    app.kubernetes.io/part-of: app-credit-origination-app
   name: credit-origination-app
   namespace: ads-risk-scoring-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
+      app.kubernetes.io/version: 1.0.0
       app.kubernetes.io/name: credit-origination-app
-      app.kubernetes.io/part-of: app-credit-origination-app
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
+      annotations:
+        app.quarkus.io/commit-id: 2d74ea766c9a1a6bb71b0a5f3d5e714f7f0f9e88
+        app.quarkus.io/build-timestamp: 2021-09-03 - 18:43:37 +0000
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /q/metrics
+        prometheus.io/port: "8080"
+        prometheus.io/scheme: http
       labels:
+        app.kubernetes.io/version: 1.0.0
         app.kubernetes.io/name: credit-origination-app
-        app.kubernetes.io/part-of: app-credit-origination-app
     spec:
       containers:
-      - image: nginxinc/nginx-unprivileged:latest
-        imagePullPolicy: Always
-        name: credit-origination-app
-        ports:
-        - containerPort: 8080
-        resources: {}
-      serviceAccountName: default
-status: {}
+        - command:
+            - java
+            - -Dquarkus.http.host=0.0.0.0
+            - -Djava.util.logging.manager=org.jboss.logmanager.LogManager
+            - -jar
+            - /deployments/quarkus-run.jar
+          env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: JAVA_APP_JAR
+              value: /deployments/quarkus-run.jar
+          image: quay.io/jbcodeforce/credit-origination-app
+          imagePullPolicy: Always
+          name: credit-origination-app
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP

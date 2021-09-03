@@ -2,12 +2,12 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   creationTimestamp: null
-  name: ads-risk-scoring-dev-app-credit-origination-app-credit-origination-app-binding
+  name: credit-origination-app-binding
   namespace: ads-risk-scoring-cicd
 spec:
   params:
   - name: imageRepo
     value: quay.io/jbcodeforce/credit-origination-app
   - name: tlsVerify
-    value: "true"
+    value: "false"
 status: {}

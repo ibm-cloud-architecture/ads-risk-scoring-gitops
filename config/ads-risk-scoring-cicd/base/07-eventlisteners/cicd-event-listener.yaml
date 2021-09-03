@@ -27,7 +27,7 @@ spec:
     template:
       ref: ci-dryrun-from-push-template
   - bindings:
-    - ref: ads-risk-scoring-dev-app-credit-origination-app-credit-origination-app-binding
+    - ref: credit-origination-app-binding
     - ref: github-push-binding
     interceptors:
     - github:

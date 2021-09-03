@@ -1,0 +1,6 @@
+resources:
+- ads-risk-scoring-dev-app-credit-origination-app-app.yaml
+- ads-risk-scoring-dev-env-app.yaml
+- ads-risk-scoring-stage-env-app.yaml
+- argo-app.yaml
+- cicd-app.yaml

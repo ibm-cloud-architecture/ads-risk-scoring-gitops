@@ -1,0 +1,4 @@
+resources:
+- ads-risk-scoring-dev-environment.yaml
+- ads-risk-scoring-dev-rolebinding.yaml
+- argocd-admin.yaml

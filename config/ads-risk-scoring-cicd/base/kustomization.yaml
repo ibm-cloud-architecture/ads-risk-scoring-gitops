@@ -9,7 +9,6 @@ resources:
 - 03-tasks/build-quarkus-image-from-git.yaml
 - 04-pipelines/app-ci-pipeline.yaml
 - 04-pipelines/ci-dryrun-from-push-pipeline.yaml
-- 04-pipelines/build-quarkus-app
 - 05-bindings/ads-risk-scoring-dev-app-credit-origination-app-credit-origination-app-binding.yaml
 - 05-bindings/github-push-binding.yaml
 - 06-templates/app-ci-build-from-push-template.yaml

@@ -5,7 +5,6 @@ metadata:
   name: cicd-event-listener
   namespace: ads-risk-scoring-cicd
 spec:
-  namespaceSelector: {}
   podTemplate: {}
   resources: {}
   serviceAccountName: pipeline

@@ -1,7 +1,9 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
+  creationTimestamp: null
   name: build-quarkus-app
+  namespace: risk-scoring-cicd
 spec:
   params:
   - name: repo-url

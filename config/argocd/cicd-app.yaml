@@ -6,7 +6,7 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: ads-risk-scoring-cicd
+    namespace: risk-scoring-cicd
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io

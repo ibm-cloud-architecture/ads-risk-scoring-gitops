@@ -10,11 +10,11 @@ spec:
   - https://github.com/ibm-cloud-architecture/ads-risk-scoring-gitops.git
   # Only permit applications to deploy to the following namespace in the same cluster
   destinations:
-  - namespace: ads-risk-scoring-cicd
+  - namespace: risk-scoring-cicd
     server: https://kubernetes.default.svc
-  - namespace: ads-risk-scoring-dev
+  - namespace: risk-scoring-dev
     server: https://kubernetes.default.svc
-  - namespace: ads-risk-scoring-stage
+  - namespace: risk-scoring-stage
     server: https://kubernetes.default.svc
   - namespace: openshift-gitops
     server: https://kubernetes.default.svc

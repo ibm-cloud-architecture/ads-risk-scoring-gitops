@@ -5,7 +5,7 @@ config:
     name: risk-scoring-cicd
 environments:
 - apps:
-  - name: app-credit-origination-app
+  - name: credit-origination-app
     services:
     - name: credit-origination-app
       pipelines:

@@ -8,6 +8,7 @@ resources:
 - 03-tasks/set-commit-status-task.yaml
 - 03-tasks/build-quarkus-image-from-git.yaml
 - 04-pipelines/app-ci-pipeline.yaml
+- 04-pipelines/quarkus-pipeline.yaml
 - 04-pipelines/ci-dryrun-from-push-pipeline.yaml
 - 05-bindings/credit-origination-app-binding.yaml
 - 05-bindings/github-push-binding.yaml

@@ -29,10 +29,10 @@ spec:
     jsonPointers:
     - /spec/host
     kind: Route
-  project: default
+  project: risk-scoring
   source:
     path: config/ads-risk-scoring-cicd/overlays
-    repoURL: https://github.com/jbcodeforce/ads-risk-scoring-gitops.git
+    repoURL: https://github.com/ibm-cloud-architecture/ads-risk-scoring-gitops.git
   syncPolicy:
     automated:
       prune: true

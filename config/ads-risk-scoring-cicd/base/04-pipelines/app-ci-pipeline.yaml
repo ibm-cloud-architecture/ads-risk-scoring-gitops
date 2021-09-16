@@ -3,7 +3,7 @@ kind: Pipeline
 metadata:
   creationTimestamp: null
   name: app-ci-pipeline
-  namespace: ads-risk-scoring-cicd
+  namespace: risk-scoring-cicd
 spec:
   finally:
   - name: set-final-status

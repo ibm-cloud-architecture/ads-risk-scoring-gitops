@@ -3,7 +3,7 @@ kind: Task
 metadata:
   creationTimestamp: null
   name: deploy-from-source-task
-  namespace: ads-risk-scoring-cicd
+  namespace: risk-scoring-cicd
 spec:
   params:
   - default: "false"

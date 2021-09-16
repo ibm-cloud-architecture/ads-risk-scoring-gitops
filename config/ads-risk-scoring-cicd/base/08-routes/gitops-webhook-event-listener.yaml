@@ -3,7 +3,7 @@ kind: Route
 metadata:
   creationTimestamp: null
   name: gitops-webhook-event-listener-route
-  namespace: ads-risk-scoring-cicd
+  namespace: risk-scoring-cicd
 spec:
   port:
     targetPort: http-listener

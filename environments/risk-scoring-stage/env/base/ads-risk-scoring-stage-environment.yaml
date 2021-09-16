@@ -4,6 +4,6 @@ metadata:
   annotations:
     app.openshift.io/vcs-uri: https://github.com/ibm-cloud-architecture/ads-risk-scoring-gitops.git?ref=HEAD
   creationTimestamp: null
-  name: risk-scoring-cicd
+  name: risk-scoring-stage
 spec: {}
 status: {}

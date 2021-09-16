@@ -1,0 +1,4 @@
+resources:
+- risk-scoring-dev-environment.yaml
+- risk-scoring-dev-rolebinding.yaml
+- argocd-admin.yaml

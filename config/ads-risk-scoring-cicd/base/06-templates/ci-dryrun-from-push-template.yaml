@@ -3,7 +3,7 @@ kind: TriggerTemplate
 metadata:
   creationTimestamp: null
   name: ci-dryrun-from-push-template
-  namespace: ads-risk-scoring-cicd
+  namespace: risk-scoring-cicd
 spec:
   params:
   - default: master

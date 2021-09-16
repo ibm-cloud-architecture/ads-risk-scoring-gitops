@@ -2,7 +2,7 @@ config:
   argocd:
     namespace: openshift-gitops
   pipelines:
-    name: ads-risk-scoring-cicd
+    name: risk-scoring-cicd
 environments:
 - apps:
   - name: app-credit-origination-app
@@ -11,19 +11,19 @@ environments:
       pipelines:
         integration:
           bindings:
-          - ads-risk-scoring-dev-app-credit-origination-app-credit-origination-app-binding
+          - credit-origination-app-binding 
           - github-push-binding
-      source_url: https://github.com/jbcodeforce/credit-origination-app.git
+      source_url: https://github.com/ibm-cloud-architecture/credit-origination-app.git
       webhook:
         secret:
           name: webhook-secret-ads-risk-scoring-dev-credit-origination-app
-          namespace: ads-risk-scoring-cicd
-  name: ads-risk-scoring-dev
+          namespace: risk-scoring-cicd
+  name: risk-scoring-dev
   pipelines:
     integration:
       bindings:
       - github-push-binding
       template: app-ci-template
-- name: ads-risk-scoring-stage
-gitops_url: https://github.com/jbcodeforce/ads-risk-scoring-gitops.git
+- name: risk-scoring-stage
+gitops_url: https://github.com/ibm-cloud-architecture/ads-risk-scoring-gitops.git
 version: 1

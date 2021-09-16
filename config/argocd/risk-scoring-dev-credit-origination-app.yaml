@@ -2,16 +2,18 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   creationTimestamp: null
-  name: ads-risk-scoring-stage-env
+  labels:
+    app.kubernetes.io/name: credit-origination-app
+  name: risk-scoring-dev-credit-origination-app
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: ads-risk-scoring-stage
+    namespace: ads-risk-scoring-dev
     server: https://kubernetes.default.svc
-  project: default
+  project: risk-scoring
   source:
-    path: environments/ads-risk-scoring-stage/env/overlays
-    repoURL: https://github.com/jbcodeforce/ads-risk-scoring-gitops.git
+    path: environments/risk-scoring-dev/apps/app-credit-origination-app/overlays
+    repoURL: https://github.com/ibm-cloud-architecture/ads-risk-scoring-gitops.git
   syncPolicy:
     automated:
       prune: true

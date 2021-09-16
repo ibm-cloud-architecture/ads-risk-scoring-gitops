@@ -1,0 +1,3 @@
+resources:
+  - cp4ba.yaml
+  - ibm-common-service-ns.yaml

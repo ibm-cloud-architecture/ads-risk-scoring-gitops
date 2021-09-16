@@ -2,13 +2,13 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   creationTimestamp: null
-  name: argocd-admin
-  namespace: ads-risk-scoring-dev
+  name: risk-scoring-dev-rolebinding
+  namespace: risk-scoring-dev
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: admin
+  name: edit
 subjects:
 - kind: ServiceAccount
-  name: openshift-gitops-argocd-application-controller
-  namespace: openshift-gitops
+  name: pipeline
+  namespace: risk-scoring-cicd

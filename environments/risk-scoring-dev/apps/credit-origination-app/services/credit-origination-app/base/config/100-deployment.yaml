@@ -46,7 +46,7 @@ spec:
                   fieldPath: metadata.namespace
             - name: JAVA_APP_JAR
               value: /deployments/quarkus-run.jar
-          image: quay.io/jbcodeforce/credit-origination-app
+          image: quay.io/ibm-cloud-architecture/credit-origination-app
           imagePullPolicy: Always
           name: credit-origination-app
           ports:

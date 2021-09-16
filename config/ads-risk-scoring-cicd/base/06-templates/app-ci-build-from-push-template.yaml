@@ -3,7 +3,7 @@ kind: TriggerTemplate
 metadata:
   creationTimestamp: null
   name: app-ci-template
-  namespace: ads-risk-scoring-cicd
+  namespace: risk-scoring-cicd
 spec:
   params:
   - description: The git branch for this PR.

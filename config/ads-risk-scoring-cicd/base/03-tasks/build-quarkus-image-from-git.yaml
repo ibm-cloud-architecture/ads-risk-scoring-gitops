@@ -2,6 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: build-quarkus-image-from-git
+  namespace: risk-scoring-cicd
   description: Build quarkus app with maven aand build docker image
 spec:
   params:

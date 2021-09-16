@@ -10,10 +10,10 @@ spec:
   destination:
     namespace: cp4ba
     server: https://kubernetes.default.svc
-  project: default
+  project: risk-scoring
   source:
     path: environments/cp4ba/env/overlays
-    repoURL: https://github.com/jbcodeforce/ads-risk-scoring-gitops.git
+    repoURL: https://github.com/ibm-cloud-architecture/ads-risk-scoring-gitops.git
   syncPolicy:
     automated:
       prune: true

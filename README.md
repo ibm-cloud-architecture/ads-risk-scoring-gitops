@@ -5,15 +5,30 @@ This GitOps repository defines the deployment of a simple risk scoring solution 
 * A Quarkus app to enter loan value, and is a client of the decision service
 * A ADS decision service to score the loan risk
 
+## Pre-requisites
+
+We need to have:
+* OpenShift 4.7+
+* OpenShift GitOps operator deployed or use the command
+
+  ```sh
+  oc apply -k https://github.com/ibm-cloud-architecture/eda-gitops-catalog/openshift-gitops-operator/overlays/stable
+  ```
+* OpenShift Pipelines operator deployed or use the command
+
+  ```sh
+  oc apply -k https://github.com/ibm-cloud-architecture/eda-gitops-catalog/openshift-pipelines-operator/overlays/
+  ```
+
 ## How this was set up
 
 * This GitOps repository was created with [KAM](https://github.com/redhat-developer/kam) with a command like
 
 ```sh
 kam bootstrap \
---service-repo-url https://github.com/jbcodeforce/credit-origination-app \
---gitops-repo-url  https://github.com/jbcodeforce/ads-risk-scoring-gitops \
---image-repo quay.io/jbcodeforce/credit-origination-app \
+--service-repo-url https://github.com/ibm-cloud-architecture/credit-origination-app \
+--gitops-repo-url  https://github.com/ibm-cloud-architecture/ads-risk-scoring-gitops \
+--image-repo quay.io/ibm-cloud-architecture/credit-origination-app \
 --output ads-risk-scoring-gitops \
 --prefix ads-risk-scoring --push-to-git=true \
 --git-host-access-token <a-github-token> \
@@ -30,3 +45,11 @@ Quarkus OpenShift plugin to the `environment/ads-risk-scoring-dev/apps/services/
 ```
 
 ## Bootstrap the CI/CD
+
+* First define the ArgoCD Project named 'risk-scoring'
+
+  ```sh
+  oc project  openshift-gitops
+  oc apply -f bootstrap/risk-scoring/argo-project.yaml
+  ```
+* 

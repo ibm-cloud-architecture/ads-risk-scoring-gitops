@@ -3,7 +3,7 @@ kind: TriggerBinding
 metadata:
   creationTimestamp: null
   name: github-push-binding
-  namespace: ads-risk-scoring-cicd
+  namespace: risk-scoring-cicd
 spec:
   params:
   - name: gitrepositoryurl

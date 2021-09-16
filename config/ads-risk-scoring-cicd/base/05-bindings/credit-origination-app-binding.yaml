@@ -3,7 +3,7 @@ kind: TriggerBinding
 metadata:
   creationTimestamp: null
   name: credit-origination-app-binding
-  namespace: ads-risk-scoring-cicd
+  namespace: risk-scoring-cicd
 spec:
   params:
   - name: imageRepo

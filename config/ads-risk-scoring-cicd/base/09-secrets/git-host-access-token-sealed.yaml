@@ -1,0 +1,17 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: git-host-access-token
+  namespace: risk-scoring-cicd
+spec:
+  encryptedData:
+    token: AgB48Z7F7vcNHVC6U1Mx8DFNFcW4EbAfpPV3tHk5yFf8vrYEdXwgo2Vg7FFdKBEmUpVTwM9dWcgQBcXbBW9Ol94zgmXhcjzBsmoY+FP1FwhoVQ6iMJP4vRl4sK7rMHzC1/oGY6sS0YQJE99jicP7m8FwFSEzPme+SVn8nq6Yje3TQIoyce0+gGxhwEc/pLfm8IVi3RTmosHVL5aDLkpeOnGenDgkpACqBlLmYuwKjWf6j5yZsG/LmKsZfPGy6RRqDfsIIFMkG9+n3xNOqdOwq1kSjNY+PujYDT9rBogS8ugvqsxNQlJduviFSOjfAB9doK7ENsjiDeocVZMdByqj4YCMGlJT9Meb0J3agzmfSDR+Kpap+qcuxcXt6TxiCvoa9ghneqtenhGlxfYkp2PE5gyeYSpvGfkaa+qU7kdSr4fpSEZsu3yON09EJ6zt9jjTQ8FY1KXqwU8BcMxERn8Y7uLYqDF9LnhIXlx/KWIvMhXTlSjB9kEnRPLOcVz/C2V6s16ND781aNqbkPvl1u2g5+OCTx2kv8kW1v5Z4ir33F5sJn2ggkG6Y3/bklwHe3CTgycpQlWnowKT8IKAzix8WCwOwQMi955m7rrZoU8slQFYAcvgAHrPl7LvVqKkphAJf5LHXprwIOi+Brs4VMffANhRMykTxOMkR+mysqDOafOQwqRVmITSjzzrq3ViGMzutQyA5TzR6QL9Kr7yKmwZS6+Sm1DDQsizb9QUIvR3OQIwE91QmA9lv+yK
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: git-host-access-token
+      namespace: risk-scoring-cicd
+    type: Opaque
+

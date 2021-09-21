@@ -1,6 +1,7 @@
 resources:
+- argo-app.yaml
+- cicd-app.yaml
 - risk-scoring-dev-credit-origination-app.yaml
 - risk-scoring-dev-env-app.yaml
 # - risk-scoring-stage-env-app.yaml
-- argo-app.yaml
-- cicd-app.yaml
+

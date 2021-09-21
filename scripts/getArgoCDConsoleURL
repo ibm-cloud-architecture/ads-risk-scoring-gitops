@@ -1,0 +1,1 @@
+oc describe route openshift-gitops-server  -n openshift-gitops

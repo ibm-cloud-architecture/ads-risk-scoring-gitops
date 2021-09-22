@@ -11,6 +11,7 @@ spec:
   serviceAccountName: pipeline
   triggers:
   - bindings:
+    name: ci-dryrun-from-push
     - ref: github-push-binding
     interceptors:
     - github:
@@ -23,7 +24,7 @@ spec:
         overlays:
         - expression: body.ref.split('/')[2]
           key: ref
-    name: ci-dryrun-from-push
+    
     template:
       ref: ci-dryrun-from-push-template
   - bindings:
@@ -36,7 +37,7 @@ spec:
           secretName: webhook-secret-risk-scoring-app
     - cel:
         filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
-          == 'ibm-cloud-architecture/credit-origination-app')
+          == 'jbcodeforce/credit-origination-app')
         overlays:
         - expression: body.ref.split('/')[2]
           key: ref

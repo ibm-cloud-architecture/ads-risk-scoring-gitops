@@ -72,6 +72,20 @@ spec:
     workspaces:
     - name: output
       workspace: shared-data
+  - name: build-quarkus-app
+      taskRef:
+        name: maven
+      runAfter:
+        - clone-source
+      params:
+        - name: GOALS
+          value:
+            - -DskipTests
+            - clean
+            - package
+      workspaces:
+        - name: source
+          workspace: shared-data
   - name: build-image
     params:
     - name: TLSVERIFY
@@ -83,7 +97,7 @@ spec:
     - name: IMAGE
       value: $(params.IMAGE)
     runAfter:
-    - clone-source
+    - build-quarkus-app
     taskRef:
       kind: ClusterTask
       name: buildah

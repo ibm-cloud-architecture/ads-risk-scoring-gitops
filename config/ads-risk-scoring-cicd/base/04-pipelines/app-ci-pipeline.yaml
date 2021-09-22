@@ -73,19 +73,19 @@ spec:
     - name: output
       workspace: shared-data
   - name: build-quarkus-app
-      taskRef:
-        name: maven
-      runAfter:
-        - clone-source
-      params:
-        - name: GOALS
-          value:
-            - -DskipTests
-            - clean
-            - package
-      workspaces:
-        - name: source
-          workspace: shared-data
+    taskRef:
+      name: maven
+    runAfter:
+      - clone-source
+    params:
+      - name: GOALS
+        value:
+          - -DskipTests
+          - clean
+          - package
+    workspaces:
+      - name: source
+        workspace: shared-data
   - name: build-image
     params:
     - name: TLSVERIFY

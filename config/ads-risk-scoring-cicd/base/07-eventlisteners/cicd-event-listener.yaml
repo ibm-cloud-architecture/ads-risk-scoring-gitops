@@ -11,7 +11,6 @@ spec:
   serviceAccountName: pipeline
   triggers:
   - bindings:
-    name: ci-dryrun-from-push
     - ref: github-push-binding
     interceptors:
     - github:
@@ -24,7 +23,7 @@ spec:
         overlays:
         - expression: body.ref.split('/')[2]
           key: ref
-    
+    name: ci-dryrun-from-push
     template:
       ref: ci-dryrun-from-push-template
   - bindings:

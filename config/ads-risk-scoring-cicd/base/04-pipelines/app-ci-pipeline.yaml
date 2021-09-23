@@ -42,6 +42,7 @@ spec:
       workspace: shared-data
   - name: build-quarkus-app
     taskRef:
+      kind: ClusterTask
       name: maven
     runAfter:
       - clone-source

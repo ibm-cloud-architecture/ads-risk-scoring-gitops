@@ -54,6 +54,8 @@ spec:
     workspaces:
       - name: source
         workspace: shared-data
+      - name: maven-settings
+        workspace: maven-settings
   - name: build-image
     params:
     - name: TLSVERIFY

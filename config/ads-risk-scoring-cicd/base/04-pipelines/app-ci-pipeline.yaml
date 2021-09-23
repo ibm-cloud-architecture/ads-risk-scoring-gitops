@@ -5,29 +5,12 @@ metadata:
   name: app-ci-pipeline
   namespace: risk-scoring-cicd
 spec:
-  finally:
-  - name: set-final-status
-    params:
-    - name: REPO
-      value: $(params.REPO)
-    - name: GIT_REPO
-      value: $(params.GIT_REPO)
-    - name: COMMIT_SHA
-      value: $(params.COMMIT_SHA)
-    - name: DESCRIPTION
-      value: The build is complete
-    - name: STATE
-      value: $(tasks.build-image.status)
-    taskRef:
-      kind: Task
-      name: set-commit-status
   params:
-  - name: REPO
-    type: string
   - name: COMMIT_SHA
     type: string
   - name: TLSVERIFY
     type: string
+    default: 'false'
   - name: BUILD_EXTRA_ARGS
     type: string
   - name: IMAGE
@@ -45,29 +28,12 @@ spec:
   - name: GIT_REPO
     type: string
   tasks:
-  - name: set-pending-status
-    params:
-    - name: REPO
-      value: $(params.REPO)
-    - name: GIT_REPO
-      value: $(params.GIT_REPO)
-    - name: COMMIT_SHA
-      value: $(params.COMMIT_SHA)
-    - name: DESCRIPTION
-      value: The build has started
-    - name: STATE
-      value: pending
-    taskRef:
-      kind: Task
-      name: set-commit-status
   - name: clone-source
     params:
     - name: url
       value: $(params.GIT_REPO)
     - name: revision
       value: $(params.GIT_REF)
-    runAfter:
-    - set-pending-status
     taskRef:
       kind: ClusterTask
       name: git-clone
